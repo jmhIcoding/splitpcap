@@ -14,14 +14,14 @@
 ### 预编译
 目前已经编译好Win10环境下的二进制文件，路径在bin/splitpcap.exe，将该文件拷贝到Wireshark的安装目录或者任意一个系统环境目录下面即可。
 ## Linux平台
-## 源码编译
+### 源码编译
 ```
 sudo apt-get install libpcap-dev
 git clone https://github.com/jmhIcoding/splitpcap.git
 cd splitpcap
 make
 ```
-## 预编译
+### 预编译
 
 目前已经编译好Linux 环境下的二进制文件，路径在bin/splitpcap，将该文件拷贝到tshark的安装目录或者任意一个系统环境目录下面即可。
 # 使用
