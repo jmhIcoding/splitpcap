@@ -9,10 +9,32 @@
 
 # 安装
 ## Windows平台
-### 重新编译
+### 源码编译
+使用Visual Stdio 2013打开vsrc/vsrc.sln 工程文件，重新生成即可。
 ### 预编译
+目前已经编译好Win10环境下的二进制文件，路径在bin/splitpcap.exe，将该文件拷贝到Wireshark的安装目录或者任意一个系统环境目录下面即可。
 ## Linux平台
-## 重新编译
+## 源码编译
+```
+sudo apt-get install libpcap-dev
+git clone https://github.com/jmhIcoding/splitpcap.git
+cd splitpcap
+make
+```
 ## 预编译
 
+目前已经编译好Linux 环境下的二进制文件，路径在bin/splitpcap，将该文件拷贝到tshark的安装目录或者任意一个系统环境目录下面即可。
 # 使用
+```
+Split large PCAP file into multi smaller PCAP pieces.
+Usage:
+         splitpcap src_pcapname dst_dir piece_num
+                 src_pcapname: The src pcap to be splitted.
+                 dst_dir: The dst directory to save the PCAP pieces
+                 piece_num: The number of pieces pcaps.
+
+```
+
+splitpcap接受三个参数，第一个参数src_pcapname是源PCAP路径，第二参数是接受目标小PCAP文件的文件夹， 第三个参数是将源PCAP切分为多少个PCAP文件。
+
+注意： 在Win平台，第二参数不能以`.`开头，如果是当前目录下的某个目录，例如`.\\nat`可以直接写成`nat`。此外，在Win系统，第二参数不要出现反斜杠。
