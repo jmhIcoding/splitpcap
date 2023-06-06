@@ -8,15 +8,19 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#ifdef _WIN32
 #include <pcap-stdinc.h>
+#endif
 #include <pcap.h>
-#include <protocol.h>
+#include "protocol.h"
 #include <vector>
 #include <set>
 #include <map>
 #include <string.h>
 #ifdef _WIN32
 #pragma comment(lib, "Ws2_32.lib")
+#else
+#include <arpa/inet.h>
 #endif
 #pragma pack(1)
 using namespace std;

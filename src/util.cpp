@@ -1,4 +1,4 @@
-#include <util.h>
+#include "util.h"
 #ifdef DEBUG_INFO
 static void DbgPrint(int level, void *header)
 {
@@ -41,8 +41,14 @@ static void DbgPrint(int level, void *header)
 		break;
 	case ip_info:
 		printf("IP");
+                #ifdef _WIN32
 		srcip.S_un.S_addr = ip_headerp->saddr;
 		dstip.S_un.S_addr = ip_headerp->daddr;
+                #else
+                srcip.s_addr = ip_headerp->saddr;
+		dstip.s_addr = ip_headerp->daddr;
+		#endif
+
 		sprintf(srcip_dot, "%s", inet_ntoa(srcip));
 		sprintf(dstip_dot, "%s", inet_ntoa(dstip));
 		printf("\theader length:%d(bytes) , procotol:%X ,source:%s,dest:%s \n", 4*(ip_headerp->ver_ihl & 0x0F), ip_headerp->proto, srcip_dot,dstip_dot);

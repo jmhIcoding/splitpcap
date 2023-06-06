@@ -1,6 +1,13 @@
 #ifndef _APCAP_PROCOTOL_H
 #define _APCAP_PROCOTOL_H
+#ifdef _WIN32
 #include <pcap-stdinc.h>
+#else
+typedef unsigned char u_char;
+typedef unsigned short u_short;
+typedef unsigned long u_long;
+typedef unsigned int u_int;
+#endif
 #include <vector>
 using namespace std;
 

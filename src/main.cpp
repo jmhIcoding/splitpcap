@@ -15,7 +15,7 @@
 #include <map>
 #include <string.h>
 
-#include <util.h>
+#include "util.h"
 
 #define DLT_NFLOG 239
 #define DLT_ETH 1

@@ -1,6 +1,6 @@
 all:
 	cd src && $(MAKE)
-	cp src/nflog2eth ./
-	cp src/nflog2eth bin/
+	cp src/splitpcap ./
+	cp src/splitpcap bin/
 clean: 
-	rm -f nflog2eth
+	rm -f splitpcap
