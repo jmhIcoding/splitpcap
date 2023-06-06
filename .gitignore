@@ -1,0 +1,4 @@
+*.idb
+vsrc/Debug/vsrc.pdb
+*.opensdf
+*.sdf
